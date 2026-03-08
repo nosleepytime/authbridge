@@ -262,7 +262,7 @@ async function handleOAuthAuthorize(request, env) {
   const session = await getSession(request, env);
   if (!session) {
     const next = `${url.pathname}?${url.searchParams.toString()}`;
-    return redirect(`/login?next=${encodeURIComponent(next)}`);
+    return redirect(`/login/?next=${encodeURIComponent(next)}`);
   }
 
   if (request.method === 'POST' && incoming.decision === 'deny') {
@@ -422,11 +422,11 @@ export default {
 
     try {
       if (pathname === '/' || pathname === '/index.html') return routeStatic(request, env, '/index.html');
-      if (pathname === '/login') return routeStatic(request, env, '/login.html');
-      if (pathname === '/signup') return routeStatic(request, env, '/signup.html');
-      if (pathname === '/dashboard') return routeStatic(request, env, '/dashboard.html');
-      if (pathname === '/developer') return routeStatic(request, env, '/developer.html');
-      if (pathname === '/admin') return routeStatic(request, env, '/admin.html');
+      if (pathname === '/login' || pathname === '/login/') return routeStatic(request, env, '/login/');
+      if (pathname === '/signup' || pathname === '/signup/') return routeStatic(request, env, '/signup/');
+      if (pathname === '/dashboard' || pathname === '/dashboard/') return routeStatic(request, env, '/dashboard/');
+      if (pathname === '/developer' || pathname === '/developer/') return routeStatic(request, env, '/developer/');
+      if (pathname === '/admin' || pathname === '/admin/') return routeStatic(request, env, '/admin/');
       if (pathname === '/config.js') return handleConfig(request, env);
 
       if (pathname === '/api/signup' && request.method === 'POST') return await handleSignup(request, env);
