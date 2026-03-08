@@ -40,7 +40,7 @@ export async function sha256Base64Url(value) {
 }
 
 export async function hashPassword(password) {
-  const iterations = 150000;
+  const iterations = 100000;
   const salt = new Uint8Array(16);
   crypto.getRandomValues(salt);
 
