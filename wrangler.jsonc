@@ -7,7 +7,7 @@
     {
       "binding": "AUTHBRIDGE_DB",
       "database_name": "authbridge-db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "database_id": "77ae2551-f40a-4f07-82ec-e0ad62721894",
       "migrations_dir": "migrations"
     }
   ],
