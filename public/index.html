@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuthBridge — Sign in with your own service</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="/">AuthBridge</a>
+      <nav class="nav">
+        <a href="/login">Login</a>
+        <a href="/signup">Sign up</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/developer">Developers</a>
+        <a href="/admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <section class="card">
+      <span class="badge">Cloudflare Pages + D1</span>
+      <h1>Your own “Sign in with X” service</h1>
+      <p>
+        AuthBridge is a starter identity service built for Cloudflare Pages in advanced mode.
+        It includes user sign up, user sign in, a developer approval workflow, OAuth authorization code flow,
+        user consent, app registration, token exchange and a user info endpoint.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="/signup">Create account</a>
+        <a class="button" href="/developer">Create a developer app</a>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>What is included</h2>
+        <ul class="list">
+          <li>Account system with password hashing and session cookies</li>
+          <li>Developer access request + admin approval</li>
+          <li>OAuth authorization code flow with optional PKCE for public clients</li>
+          <li>Consent screen for third-party websites and apps</li>
+          <li>Opaque access tokens + user profile endpoint</li>
+          <li>Weglot-ready pages for auto translation</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Important note</h2>
+        <p>
+          This project is a practical custom auth service starter. It is designed to really run on Cloudflare Pages + D1,
+          but for serious production use you should still add email verification, password reset, rate limiting, audit logs
+          and stronger OIDC features such as asymmetric JWT signing and a JWKS endpoint.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

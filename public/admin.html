@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — AuthBridge</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="/">AuthBridge</a>
+      <nav class="nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/developer">Developers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container grid two">
+    <section class="card">
+      <h1>Bootstrap first admin</h1>
+      <p class="muted">Run this once after deployment if your instance has no admin yet.</p>
+
+      <form id="bootstrap-admin-form" class="stack">
+        <label>
+          <span>Bootstrap key</span>
+          <input type="password" name="bootstrap_key" placeholder="Value from Cloudflare secret" required />
+        </label>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Admin name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="admin@example.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" minlength="8" required />
+        </label>
+        <button class="button primary" type="submit">Create first admin</button>
+      </form>
+      <p id="bootstrap-message" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Pending developer requests</h2>
+      <div id="request-list" class="stack">
+        <p class="muted">Loading requests…</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — AuthBridge</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="signup">
+  <main class="container narrow">
+    <section class="card">
+      <a class="brand block" href="/">AuthBridge</a>
+      <h1>Create your account</h1>
+      <p class="muted">This account can later approve third-party apps through your own login provider.</p>
+
+      <form id="signup-form" class="stack">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="name@example.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" placeholder="Minimum 8 characters" minlength="8" required />
+        </label>
+        <button class="button primary" type="submit">Sign up</button>
+      </form>
+
+      <p id="message" class="message"></p>
+      <p class="small">Already have an account? <a href="/login">Login</a></p>
+    </section>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

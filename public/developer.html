@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portal — AuthBridge</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="developer">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="/">AuthBridge</a>
+      <nav class="nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container grid two">
+    <section class="card">
+      <h1>Developer access</h1>
+      <div id="developer-status" class="stack">
+        <p class="muted">Loading your developer status…</p>
+      </div>
+
+      <form id="developer-request-form" class="stack">
+        <label>
+          <span>Company or project name</span>
+          <input type="text" name="company_name" placeholder="Example Studio" required />
+        </label>
+        <label>
+          <span>Website</span>
+          <input type="url" name="website" placeholder="https://example.com" />
+        </label>
+        <label>
+          <span>Use case</span>
+          <textarea name="use_case" placeholder="Explain why you want to add this login option to your website or app." required></textarea>
+        </label>
+        <button class="button primary" type="submit">Request access</button>
+      </form>
+      <p id="developer-request-message" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Create OAuth client</h2>
+      <p class="muted">Only available after admin approval.</p>
+
+      <form id="client-form" class="stack">
+        <label>
+          <span>Application name</span>
+          <input type="text" name="name" placeholder="My cool app" required />
+        </label>
+
+        <label>
+          <span>Client type</span>
+          <select name="client_type" required>
+            <option value="confidential">Confidential (server app)</option>
+            <option value="public">Public (SPA / mobile app with PKCE)</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Redirect URIs</span>
+          <textarea name="redirect_uris" placeholder="One URI per line&#10;https://example.com/callback" required></textarea>
+        </label>
+
+        <label>
+          <span>Allowed scopes</span>
+          <input type="text" name="allowed_scopes" value="profile email" />
+        </label>
+
+        <button class="button primary" type="submit">Create client</button>
+      </form>
+
+      <p id="client-message" class="message"></p>
+
+      <h2>Your clients</h2>
+      <div id="client-list" class="stack">
+        <p class="muted">Loading your clients…</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

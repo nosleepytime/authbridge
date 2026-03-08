@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — AuthBridge</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="/">AuthBridge</a>
+      <nav class="nav">
+        <a href="/developer">Developers</a>
+        <a href="/admin">Admin</a>
+        <button id="logout-button" class="linklike">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Dashboard</h1>
+      <div id="dashboard-content" class="stack">
+        <p class="muted">Loading your session…</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
